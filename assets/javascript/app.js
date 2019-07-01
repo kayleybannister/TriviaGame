@@ -35,8 +35,8 @@ $("#start").on("click", function(){
 
     for (var i = 0; i < questions.length; i++) {
 
-        $("#start").append(questions[i]);
-    }
+        $("#start").append("<h3>" + questions[i].question + "<br><br>" + questions[i].choices + "</h3>");
+    };
 
 });
 
