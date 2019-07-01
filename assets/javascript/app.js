@@ -31,12 +31,11 @@ var questions = [{
 //function for clicking Start - begins the entire game
 $("#start").on("click", function(){
 
-    console.log("Start button has been clicked!");
-
     for (var i = 0; i < questions.length; i++) {
 
         $("#start").append("<h3>" + questions[i].question + "<br><br>" + questions[i].choices + "</h3>");
     };
+
 
 });
 
