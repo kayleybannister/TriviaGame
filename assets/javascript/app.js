@@ -1,0 +1,40 @@
+//VARIABLES
+var correctCounter = 0;
+var incorrectCounter = 0;
+var intervalId;
+var clockRunning = false;
+var timeLeft = 0;
+
+var questions = [{
+    question: "Who are the Duke and Duchess of Sussex?",
+    choices: ["Prince William and Kate Middleton", "Queen Elizabeth and Prince Phillip", "Barack and Michelle Obama", "Prince Harry and Meghan Markle"],
+    correctAnswer: "Prince Harry and Meghan Markle"
+},
+{
+    question: "What state is home to Clark Hill Lake?",
+    choices: ["South Carolina", "Georgia", "Florida", "Tennessee"],
+    correctAnswer: "Georgia"
+},
+{
+    question: "Who is the head football coach for the University of Georgia?",
+    choices: ["Dabo Swinney", "Mark Richt", "Nick Saban", "Kirby Smart"],
+    correctAnswer: "Kirby Smart"
+}];
+
+
+
+
+
+
+//FUNCTIONS
+
+//function for clicking Start - begins the entire game
+$("#start").on("click", function(){
+
+    console.log("Start button has been clicked!");
+
+    $("#display-question").html(questions.question);
+    console.log(questions);
+
+});
+
