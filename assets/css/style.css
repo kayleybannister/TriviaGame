@@ -8,17 +8,22 @@ body {
 
 h2 {
     background-color: aqua;
-    width: 500px;
     padding: 20px;
     margin: 30px;
+    border-style: dotted;
+    border-color: #ffffff;
+    display: inline-block;
+    width: max-content;
 }
 
 button {
-    background-color: white;
     font-size: 15px;
 }
 
-h3 {
+p {
     color: darkblue;
     font-size: 15px;
+    background-color:  #ffffff;
+    padding: 20px;
+    margin: 30px;
 }
