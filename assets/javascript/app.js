@@ -3,10 +3,12 @@
 var correctCounter = 0;
 var incorrectCounter = 0;
 var unansweredQuestions = 0;
+
+//var that gets the user's selection for each question
 var userPick;
 
 //sets the time remaining for each question to 10 seconds
-var timeLeft = 10;
+var timeLeft = 40;
 
 //creating object for all the questions and their corresponding choices and correct answers
 var questions = [{
@@ -35,14 +37,17 @@ var questions = [{
 
 //FUNCTIONS
 
-//need a timer function to countdown for each question using a function and if/else statements
+//need a timer function to countdown the timeLeft using a function and if/else statements
 function countdown()
 {
     
 };
 
 //need to create if/else statements for userPick to confirm if it matches the correctAnswer
+//if correct, increase correct by 1 point
 // $("#correct").append(correctCounter++);
+
+//if incorrect, increase incorrect by 1 point
 //$("#incorrect").append(incorrectCounter++);
 
 //function for clicking Start - begins the entire game
