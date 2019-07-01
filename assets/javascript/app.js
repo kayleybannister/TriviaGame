@@ -33,8 +33,10 @@ $("#start").on("click", function(){
 
     console.log("Start button has been clicked!");
 
-    $("#display-question").html(questions.question);
-    console.log(questions);
+    for (var i = 0; i < questions.length; i++) {
+
+        $("#start").append(questions[i]);
+    }
 
 });
 
