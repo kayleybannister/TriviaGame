@@ -40,9 +40,40 @@ $("#start").on("click", function(){
 
     for (var i = 0; i < questions.length; i++) {
 
-        $("#start").append("<h3>" + questions[i].question + "<BR><br>" + "CHOICES: <br>"+ questions[i].choices + "</h3>");
-    };
+        $("#start").append("<h3>" + questions[1].question + "</h3>");
+        for (var j = 0; j < question[1].length; j++)
 
+        if questions[1].choices === questions[1].correctAnswer {
+
+            $("#start").append("<h3>" + questions[2].question + "</h3>");
+
+        }
+
+        else {
+            $("#start").append("<h3> You guessed incorrectly! </h3>);
+        }
+
+        if questions[2].choices == questions[2].correctAnswer {
+
+            $("#start").append("<h3>" + questions[3].question + "</h3>");
+
+        }
+
+        else {
+            $("#start").append("<h3> You guessed incorrectly! </h3>);
+        }
+
+        if questions[3].choices == questions[3].correctAnswer {
+
+            $("#start").append("<h3>" + questions[4].question + "</h3>");
+
+        }
+
+        else {
+            $("#start").append("<h3> You guessed incorrectly! </h3>);
+        }
+
+    };
 
 });
 
