@@ -3,6 +3,7 @@
 var correctCounter = 0;
 var incorrectCounter = 0;
 var unansweredQuestions = 0;
+var userPick;
 
 //sets the time remaining for each question to 10 seconds
 var timeLeft = 10;
@@ -40,7 +41,12 @@ function countdown()
     
 };
 
+//need to create if/else statements for userPick to confirm if it matches the correctAnswer
+// $("#correct").append(correctCounter++);
+//$("#incorrect").append(incorrectCounter++);
+
 //function for clicking Start - begins the entire game
+// need to figure out a way to only show ONE question at a time instead of all 4
 $("#start").on("click", function(){
 
     $("#start").remove();
@@ -50,7 +56,9 @@ $("#start").on("click", function(){
 
         for (var j = 0; j < questions[i].choices.length; j++) {
             $("#questions").append("<input type='radio' name='question-" + i + "' value='" + questions[i].choices[j] + "'>" + questions[i].choices[j]);
+
         };
+
     };
 
 });
