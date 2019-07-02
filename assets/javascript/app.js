@@ -1,16 +1,11 @@
 //VARIABLES
-
 var correctCounter = 0;
-var incorrectCounter = 0;
-var unansweredQuestions = 0;
-
 //var that gets the user's selection for each question
 var userPick;
-
-//sets the time remaining for each question to 10 seconds
-var timeLeft = 40;
-
+//sets the time remaining for each question to 60 seconds (15 for each question)
+var timeLeft = 60;
 //creating object for all the questions and their corresponding choices and correct answers
+var intervalId;
 var questions = [{
     question: "What is my middle name?",
     choices: ["Alice", "Elizabeth", "Allison", "Emily"],
@@ -23,7 +18,7 @@ var questions = [{
 },
 {
     question: "What state was Big Little Lies filmed in?",
-    choices: ["Georgia", "California", "Washington", "Orengon"],
+    choices: ["Georgia", "California", "Washington", "Oregon"],
     correctAnswer: "California"
 },
 {
@@ -31,40 +26,54 @@ var questions = [{
     choices: ["Dabo Swinney", "Mark Richt", "Nick Saban", "Kirby Smart"],
     correctAnswer: "Kirby Smart"
 }];
+//==========================================================================
 
+$("#start").on("click", startSurvey);
 
+$(document).on("checked", "name=question-3", evaluate);
 
+//==========================================================================
 
 //FUNCTIONS
 
-//need a timer function to countdown the timeLeft using a function and if/else statements
-function countdown()
-{
-    
+//need a timer function to countdown the timeLeft using a function and if/else statement
+function timer() {
+    intervalId = setInterval(countDown, 1000);
+}
+
+function countDown() {
+    timeLeft--;
+    $("#timer").text(timeLeft);
+
+    if (timeLeft <= 0) {
+        evaluate();
+        clearInterval(intervalId);
+        alert("TIME IS UP!");
+    }
 };
 
-//need to create if/else statements for userPick to confirm if it matches the correctAnswer
-//if correct, increase correct by 1 point
-// $("#correct").append(correctCounter++);
+function startSurvey() {
 
-//if incorrect, increase incorrect by 1 point
-//$("#incorrect").append(incorrectCounter++);
-
-//function for clicking Start - begins the entire game
-// need to figure out a way to only show ONE question at a time instead of all 4
-$("#start").on("click", function(){
+    timer();
 
     $("#start").remove();
-
     for (var i = 0; i < questions.length; i++) {
         $("#questions").append("<h3>" + questions[i].question + "</h3>");
-
         for (var j = 0; j < questions[i].choices.length; j++) {
             $("#questions").append("<input type='radio' name='question-" + i + "' value='" + questions[i].choices[j] + "'>" + questions[i].choices[j]);
-
         };
-
     };
+};
 
-});
+function evaluate() {
+    var ansPicked = $("input:checked");
 
+    for (let i = 0; i < questions.length; i++) {
+        
+        if(ansPicked[i].value === questions[i].correctAnswer) {
+            correctCounter++;
+        }
+    };
+    $("#correct").text(correctCounter);
+    $("#incorrect").text(questions.length - correctCounter);
+}
