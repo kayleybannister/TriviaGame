@@ -2,8 +2,8 @@
 var correctCounter = 0;
 //var that gets the user's selection for each question
 var userPick;
-//sets the time remaining for each question to 60 seconds (15 for each question)
-var timeLeft = 60;
+//sets the time remaining for each question to 40 seconds (10 for each question)
+var timeLeft = 40;
 //creating object for all the questions and their corresponding choices and correct answers
 var intervalId;
 var questions = [{
@@ -46,9 +46,9 @@ function countDown() {
     $("#timer").text(timeLeft);
 
     if (timeLeft <= 0) {
+        alert("TIME IS UP!");
         evaluate();
         clearInterval(intervalId);
-        alert("TIME IS UP!");
     }
 };
 
