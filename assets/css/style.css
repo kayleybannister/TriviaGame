@@ -1,5 +1,5 @@
 body {
-    background-image: url("/Users/kayley/Repositories/TriviaGame/assets/images/trivia.jpg");
+    background-image: url("../images/trivia.jpg");
     font-family: Arial, Helvetica, sans-serif;
     color: darkblue;
     text-align: center;
